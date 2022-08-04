@@ -113,7 +113,7 @@ export default function File() {
 
     return (
 
-        <div>
+        <div className="fileContainer">
 
             <Head>
                 <title>Next.js</title>
@@ -125,21 +125,21 @@ export default function File() {
 
 
             <h1>Load File</h1>
-            <button onClick={handleUpload}>Upload</button>
-            <form onSubmit={handleSubmit}>
+            <button onClick={handleUpload} className="main-btn">Upload</button>
+            <form onSubmit={handleSubmit} className="file-form">
                 <div style={{ display: "inline-block", margin: "0px 10px 0px 0px" }}>
-                    <h5>Allowed files .csv .txt</h5>
-                    <input type="text" placeholder='File.txt' ref={fileRef} />
+                    <h5 className="allowed">Allowed files .csv .txt</h5>
+                    <input type="text" placeholder='File.txt' ref={fileRef} className="inputTxt"/>
                 </div>
-                <div style={{ display: "inline-block", margin: "0px 0px 0px 10px" }}>
+                <div style={{ display: "inline-block", margin: "0px 0px 0px 10px" }} className="separator">
                     <h5>Separator Character</h5>
-                    <input type="text" ref={separatorRef} />
+                    <input type="text" ref={separatorRef} className="inputTxt"/>
                 </div>
                 <div>
-                    <input type="submit" value="Ordenar"></input>
+                    <input type="submit" value="Ordenar" className="main-btn third1-btn"></input>
+                    <button onClick={handleDownload} className="secondary-btn third2-btn">Download File</button>
                 </div>
             </form>
-            <button onClick={handleDownload}>Download File</button>
 
         </div>
     )

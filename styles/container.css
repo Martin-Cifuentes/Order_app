@@ -1,0 +1,58 @@
+.fileContainer {
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    padding: 1em;
+    border-radius: 15px;
+    border: 1px solid white;
+}
+
+.main-btn {
+    background-color: #5f99fb;
+    border: 0;
+    border-radius: 15px;
+    padding: .25em 3em .25em 3em;
+    font-weight: bold;
+}
+
+.secondary-btn {
+    background-color: #3d4b6b;
+    border: 0;
+    border-radius: 15px;
+    padding: .25em 3em .25em 3em;
+    font-weight: bold;
+}
+
+.allowed {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #5f99fb;
+}
+
+.separator {
+    width: 31%;
+}
+
+.separator h5 {
+    font-size: 14px;
+}
+
+.separator input {
+    width: 100%
+}
+
+.inputTxt {
+    height: 2.5em;
+    margin-bottom: 12px;
+    border: 0;
+    border-radius: 5px;
+    padding: 1em;
+}
+
+.third1-btn {
+    margin-right: 8px;
+}
+
+.third2-btn {
+    margin-left: 8px;
+}
