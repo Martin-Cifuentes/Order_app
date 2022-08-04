@@ -1,7 +1,14 @@
 import Head from "next/head"
 import { useRef } from 'react'
+import { useFilePicker } from 'use-file-picker'
+
 
 export default function File() {
+
+    const [openFileSelector, {filesContent, loading, plainFiles}] = useFilePicker({
+        readAs: 'DataURL',
+        accept: ['.csv','.txt'],
+    });
 
     const fileRef = useRef()
     const separatorRef = useRef()
@@ -76,6 +83,8 @@ export default function File() {
         console.log(data.data)
 
         // En lugar de \n debe ser por separador elegido.
+        let separator = separatorRef.current.value
+        console.log(separator)
         let array = data.data.split("\n")
         mergeSort(array)
         console.log(array)
@@ -89,14 +98,14 @@ export default function File() {
         e.preventDefault();
 
         const response = await fetch('http://localhost:3000/api/file/upload')
-            .then(response => response)
         // Convertir response a String
-        fileRef.current.value = "Enviar string"
+        fileRef.current.value = "sape"
     }
 
     let handleDownload = async e => {
         e.preventDefault();
 
+        let separator = separatorRef.current.value
         let data = dataArr.join("\n")
         console.log("Download")
         console.log(data)
@@ -125,7 +134,7 @@ export default function File() {
 
 
             <h1>Load File</h1>
-            <button onClick={handleUpload} className="main-btn">Upload</button>
+            <button onClick={openFileSelector/*handleUpload*/} className="main-btn" id="upload-btn">Upload</button>
             <form onSubmit={handleSubmit} className="file-form">
                 <div style={{ display: "inline-block", margin: "0px 10px 0px 0px" }}>
                     <h5 className="allowed">Allowed files .csv .txt</h5>

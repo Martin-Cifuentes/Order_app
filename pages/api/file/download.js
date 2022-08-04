@@ -10,6 +10,6 @@ export default function handler (req, res) {
         res.status(200).send("Logrado!")
     })
 
-    res.status(500).send("No logrado!")
+    //res.status(500).send("No logrado!")
 
 }
